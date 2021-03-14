@@ -1,1 +1,17 @@
-<p>customer works!</p>
+<div *ngIf="dataLoaded==false" class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Renk</th>
+          
+        </tr>
+      </thead>
+    <tr *ngFor="let customer of customers">
+        <td>{{customer.name}}</td>
+      
+       
+    </tr>
+</table>
