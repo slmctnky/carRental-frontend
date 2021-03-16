@@ -14,21 +14,22 @@ export class CarService {
 
   constructor(private httpClient:HttpClient) { }
   getCars():Observable<ListResponseModel<Car>>{
-    let newPath=GlobalConstants.apiURL+"/cars/getall";
+    let newPath=GlobalConstants.apiURL+"cars/getall";
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
 
   }
   getCarDetails():Observable<ListResponseModel<CarDetailsDto>>{
-    let newPath=GlobalConstants.apiURL+"/cars/getdetails";
+    let newPath=GlobalConstants.apiURL+"cars/getallwithdetail";
+    console.log(newPath)
     return this.getHttpClientGet(newPath);
 
   }
   getCarsByColors(colorId:number):Observable<ListResponseModel<CarDetailsDto>>{
-    let newPath=GlobalConstants.apiURL+"/cars/getwithcolor?colorId="+colorId;
+    let newPath=GlobalConstants.apiURL+"cars/getwithcolor?colorId="+colorId;
     return this.getHttpClientGet(newPath);
   }
   getCarsByBrands(brandId:number):Observable<ListResponseModel<CarDetailsDto>>{
-    let newPath=GlobalConstants.apiURL+"/cars/getwithbrand?brandId="+brandId;
+    let newPath=GlobalConstants.apiURL+"cars/getwithbrand?brandId="+brandId;
     return this.getHttpClientGet(newPath);
   }
   getHttpClientGet(newPath:string){
