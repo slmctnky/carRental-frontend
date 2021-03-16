@@ -4,14 +4,15 @@
 <table class="table">
     <thead class="thead-dark">
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Renk</th>
-          
+          <th scope="col">Şirket</th>
+          <th scope="col">Adı</th>
+          <th scope="col">Soyadı</th>
         </tr>
       </thead>
     <tr *ngFor="let customer of customers">
         <td>{{customer.companyName}}</td>
       
-       
+        <td>{{customer.firstName}}</td>
+        <td>{{customer.lastName}}</td>
     </tr>
 </table>
