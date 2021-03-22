@@ -26,10 +26,12 @@ export class CarService {
   }
   getCarsByColors(colorId:number):Observable<ListResponseModel<CarDetailsDto>>{
     let newPath=GlobalConstants.apiURL+"cars/getwithcolor?colorId="+colorId;
+    console.log(newPath)
     return this.getHttpClientGet(newPath);
   }
   getCarsByBrands(brandId:number):Observable<ListResponseModel<CarDetailsDto>>{
     let newPath=GlobalConstants.apiURL+"cars/getwithbrand?brandId="+brandId;
+    console.log(newPath)
     return this.getHttpClientGet(newPath);
   }
   getHttpClientGet(newPath:string){

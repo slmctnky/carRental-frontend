@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListClassStatusService } from 'src/app/common/list-class-status.service';
 import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
 
@@ -11,7 +12,8 @@ export class ColorComponent implements OnInit {
 
   colors:Color []=[]
   dataLoaded=false
-  constructor(private colorService:ColorService) { }
+  constructor(private colorService:ColorService,
+    public lcs:ListClassStatusService<Color>) { }
 
   ngOnInit(): void {
     this.getColors();
@@ -25,4 +27,5 @@ export class ColorComponent implements OnInit {
     })
    
   }
+
 }
