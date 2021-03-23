@@ -32,13 +32,11 @@ export class CarComponent implements OnInit {
         console.log("Brand")
         this.getCarsWithBrand(params["brandId"])
       }
-<<<<<<< HEAD
-=======
+
       else if(params["cardetails"]){
         
         this.getDetail(params["cardetails"])
       }
->>>>>>> ab48a425d0bdd5c02f4edb85392cb669cf88e4bc
       else{
         console.log("Tüm")
         this.getCars()
@@ -55,12 +53,10 @@ export class CarComponent implements OnInit {
     })
    
   }
-<<<<<<< HEAD
-=======
+
   getDetail(Id:number){
     
   }
->>>>>>> ab48a425d0bdd5c02f4edb85392cb669cf88e4bc
   getCarsWithColor(colorId:number){
     this.carService.getCarsByColors(colorId).subscribe(response=>{
       this.cardetails=response.data
