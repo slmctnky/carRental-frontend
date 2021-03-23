@@ -11,7 +11,11 @@ const routes: Routes = [
   {path:"rentals",component:RentalComponent},
   {path:"colors",component:ColorComponent},
   {path:"customers",component:CustomerComponent},
+<<<<<<< HEAD
 
+=======
+  {path:"cars/cardetails/:carId",component:CarComponent},
+>>>>>>> ab48a425d0bdd5c02f4edb85392cb669cf88e4bc
   {path:"cars/brand/:brandId",component:CarComponent},
   {path:"cars/color/:colorId",component:CarComponent}
 ];

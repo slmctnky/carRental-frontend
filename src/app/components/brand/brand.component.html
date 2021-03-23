@@ -4,7 +4,11 @@
 <ul class="list-group">
     <li (click)="clearCurrentBrand()"
     routerLink="cars"
+<<<<<<< HEAD
     [class]="getAllBrandClass()"> Tüm Ürünler</li>
+=======
+    [class]="getAllBrandClass()"> Tüm Markalar</li>
+>>>>>>> ab48a425d0bdd5c02f4edb85392cb669cf88e4bc
    <li (click)="setCurrentBrand(brand)" 
    routerLink="cars/brand/{{brand.id}}"
     *ngFor="let brand of brands"
