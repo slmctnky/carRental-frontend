@@ -1,17 +1,13 @@
 <div *ngIf="dataLoaded==false" class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-         
-          <th scope="col">Renk</th>
-          
-        </tr>
-      </thead>
-    <tr *ngFor="let color of colors">
-        <td>{{color.name}}</td>
-      
-       
-    </tr>
-</table>
+<ul class="list-group">
+  <li (click)="lcs.clearCurrentModel()"
+  routerLink="cars"
+  [class]="lcs.getAllModelClass()"> Tüm Renkler</li>
+  <li (click)="lcs.setCurrentModel(color)" 
+  routerLink="cars/color/{{color.id}}"
+  *ngFor="let color of colors" 
+  [class]="lcs.getModelClass(color)">{{color.name}}</li>
+  
+</ul>

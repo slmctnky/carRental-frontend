@@ -2,6 +2,12 @@
     <span class="visually-hidden">Loading...</span>
 </div>
 <ul class="list-group">
-    <li *ngFor="let brand of brands" class="list-group-item">{{brand.name}}</li>
+    <li (click)="clearCurrentBrand()"
+    routerLink="cars"
+    [class]="getAllBrandClass()"> Tüm Ürünler</li>
+   <li (click)="setCurrentBrand(brand)" 
+   routerLink="cars/brand/{{brand.id}}"
+    *ngFor="let brand of brands"
+    [class]="getBrandClass(brand)">{{brand.name}}</li>
     
   </ul>

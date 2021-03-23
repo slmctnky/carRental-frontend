@@ -2,13 +2,43 @@
   <app-navi></app-navi>
   <div class="row">
     <div class="col-md-3">
-      <app-brand></app-brand>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+             Markalar
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <app-brand></app-brand>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Renkler
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            
+              <app-color></app-color>
+           
+          </div>
+        </div>
+      
+        
+      </div>
+      
+     
     </div>
     <div class="col-md-9">
-      <app-rental></app-rental>
+      <router-outlet></router-outlet>
     </div>
+  
     
   </div>
   
-  <router-outlet></router-outlet>
+
   </div>
+
+  
