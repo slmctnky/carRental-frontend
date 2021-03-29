@@ -11,6 +11,10 @@ import { NaviComponent } from './components/navi/navi.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { CampaignMainComponent } from './components/campaign-main/campaign-main.component';
+import { MainPageComponent } from './components/pages/main-page/main-page.component';
+import { CarImagesAddComponent } from './components/car-images-add/car-images-add.component';
 
 
 @NgModule({
@@ -22,7 +26,11 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
     NaviComponent,
     RentalComponent,
     CustomerComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    CarAddComponent,
+    CampaignMainComponent,
+    MainPageComponent,
+    CarImagesAddComponent
   ],
   imports: [
     BrowserModule,

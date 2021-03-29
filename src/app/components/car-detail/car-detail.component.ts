@@ -15,11 +15,11 @@ import { CarImageService } from 'src/app/services/car-image.service';
 export class CarDetailComponent implements OnInit {
 
   car: Car;
-
+ 
   carDetail: CarDetailsDto;
   images:CarImage[];
   dataLoaded = false;
-  imageBasePath = GlobalConstants.apiURL;
+  imageBasePath =  GlobalConstants.baseURL;
 
   constructor(private carDetailService:CarDetailService, 
     private carImageService:CarImageService, 
@@ -30,7 +30,7 @@ export class CarDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       if(params["carId"]){
         this.getCarDetail(params["carId"]);
-        //this.getImageDetail(params["carId"]);
+        this.getImageDetail(params["carId"]);
       }
      
     });
@@ -45,13 +45,13 @@ export class CarDetailComponent implements OnInit {
     });
   }
 
-  // getImageDetail(carId:number) {
-  //   this.carImageService.getCarImages(carId).subscribe((response) => {
-  //     this.images = response.data;
-  //     console.log(this.images);
-  //     this.dataLoaded = true;
-  //   });
-  // }
+   getImageDetail(carId:number) {
+     this.carImageService.getCarImages(carId).subscribe((response) => {
+       this.images = response.data;
+       console.log(this.images);
+       this.dataLoaded = true;
+     });
+   }
 
   getSliderClassName(index:Number){
     if(index == 0){
@@ -60,7 +60,9 @@ export class CarDetailComponent implements OnInit {
       return "carousel-item";
     }
   }
-
+  isActiveCarousel(carImageIndex: number): string {
+    return carImageIndex == 0 ? 'active' : '';
+  }
   // addToRentCart(car:Car){
   //   this.toastrService.success("Added ",car.carDescription + "added to RentCart")
   //   this.rentCartService.addToRentCart(car);

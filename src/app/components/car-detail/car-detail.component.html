@@ -1,16 +1,16 @@
 <div class="container-fluid container-md py-5 mb-5">
     <div class="row">
       <div class="col-lg">
-        <h1 class="display-1 fw-bold">Marka</h1>
+        <h1 class="display-1 fw-bold">{{carDetail.brandName}}</h1>
         <h2 class="display-3 fw-light">
-          Model
-          <span class="border border-secondary rounded-1 px-3">{{
-            2000
-          }}</span>
+          {{carDetail.carName}}
+          <span class="border border-secondary rounded-1 px-3">
+            {{carDetail.modelYear}}
+          </span>
         </h2>
         <div class="my-5">
-          <h6 class="display-6 fw-light">Description:</h6>
-          Burada açıklama var
+          <h6 class="display-6 fw-light">Açıklama:</h6>
+          {{carDetail.description}}
         </div>
       </div>
       <div class="col-lg">
@@ -20,31 +20,29 @@
           data-bs-ride="carousel"
         >
           <div class="carousel-indicators">
-            <!-- <button
-              *ngFor="let carImage of carImages; let i = index"
+            <button
+              *ngFor="let carImage of images; let i = index"
               type="button"
               data-bs-target="#car-images-carousel"
               attr.data-bs-slide-to="{{ i }}"
               class="{{ isActiveCarousel(i) }}"
               aria-current="true"
               attr.aria-label="Car Image {{ i }}"
-            ></button> -->
+            ></button>
           </div>
           <div class="carousel-inner">
-            <!-- <div
-              *ngFor="let carImage of carImages; let i = index"
+           <div
+              *ngFor="let image of images; let i = index"
               class="carousel-item {{ isActiveCarousel(i) }} w-100"
             >
              <div class="d-flex align-items-center justify-content-center h-100">
                 <img
-                  src="{{ getCarImageUrl(carImage.id) }}"
+                  src="{{imageBasePath}}{{ image.imagePath }}"
                   class="d-block w-100"
-                  alt="Rent {{ brand.name }} {{ car.name }} {{
-                    car.modelYear
-                  }} Car Image"
+                  alt="{{ image.imagePath }}"
                 />
               </div> 
-            </div> -->
+            </div> 
           </div>
           <button
             class="carousel-control-prev"

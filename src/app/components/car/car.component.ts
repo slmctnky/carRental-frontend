@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { GlobalConstants } from 'src/app/common/globalConstants';
 import { Car } from 'src/app/models/car';
 import { CarDetailsDto } from 'src/app/models/carDetailsDto';
 
@@ -70,6 +71,14 @@ export class CarComponent implements OnInit {
       this.dataLoaded=true;
     })
    
+  }
+  SetImage(Car:CarDetailsDto){
+    if (Car.imagePath.length>0) {
+      console.log(GlobalConstants.baseURL+ Car.imagePath)
+      return GlobalConstants.baseURL+ Car.imagePath;
+    }else{
+      return `default.jpg`;
+    }
   }
 
 }
