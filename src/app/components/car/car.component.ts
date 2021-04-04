@@ -13,7 +13,7 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class CarComponent implements OnInit {
 
-
+  filterBrandText="";
   cars:Car[]=[];
   cardetails:CarDetailsDto[]=[];
   dataLoaded=false;
